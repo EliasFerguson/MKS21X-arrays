@@ -4,6 +4,7 @@ public class ArrayDemo {
     printArray(new int [3][10]);
     System.out.println(countZeros2D(new int [5][5]));
     printArray(fill2D(new int [5][5]));
+    printArray(fill2DCopy(new int [5][5]));
   }
   public static void printArray(int[]ary) {
     System.out.print("[");
@@ -62,5 +63,20 @@ public class ArrayDemo {
       }
     }
     return vals;
+  }
+  public static int[][] fill2DCopy(int[][] vals){
+    int[][] output = new int[vals.length][];
+    for (int idx = 0; idx < vals.length; idx++) {
+      output[idx] = new int[vals[idx].length];
+      for (int idx2 = 0; idx2 < vals[idx].length; idx2++) {
+        if (vals[idx][idx2] < 0) {
+          output[idx][idx2] = 3;
+        }
+        else {
+          output[idx][idx2] = 1;
+        }
+      }
+    }
+    return output;
   }
 }
