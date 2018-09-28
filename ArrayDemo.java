@@ -2,6 +2,7 @@ public class ArrayDemo {
   public static void main (String[]args){
     printArray(new int[10]);
     printArray(new int [3][10]);
+    System.out.println(countZeros2D(new int [5][5]));
   }
   public static void printArray(int[]ary) {
     System.out.print("[");
@@ -37,5 +38,16 @@ public class ArrayDemo {
         System.out.print(", ");
       }
     }
+  }
+  public static int countZeros2D(int[][] nums){
+    int count = 0;
+    for (int idx = 0; idx < nums.length; idx++) {
+      for(int idx2 = 0; idx2 < nums[idx].length; idx2++) {
+        if (nums[idx][idx2] == 0) {
+          count += 1;
+        }
+      }
+    }
+    return count;
   }
 }
